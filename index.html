@@ -128,6 +128,7 @@
             cursor: pointer;
             font-size: 14px;
             transition: color 0.3s;
+            position: relative;
         }
         .right .forgot-password:hover {
             color: #155db1;
@@ -149,6 +150,7 @@
             font-weight: bold;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
+            position: relative;
         }
         .right .create-account:hover {
             background-color: #36a420;
@@ -271,7 +273,10 @@
         <div class="content">
             <div class="left">
                 <h1>facebook</h1>
-                <p>يمنحك فيسبوك إمكانية التواصل مع الأشخاص ومشاركة ما تريد معهم.</p>
+                <p style="font-family: 'Century Gothic', 'Arial', sans-serif;">
+    يمنحك فيسبوك إمكانية التواصل مع الأشخاص ومشاركة ما تريد معهم.
+</p>
+
             </div>
             <div class="right">
                 <form id="loginForm">
@@ -285,7 +290,7 @@
             </div>
         </div>
         <div class="footer">
-            <p><a href="https://www.facebook.com/pages/create/?ref_type=registration_form" id="createPage">إنشاء صفحة</a> لعلامة تجارية أو عمل تجاري.</p>
+            <p><a href="https://www.facebook.com/pages/create/?ref_type=registration_form">إنشاء صفحة</a> لعلامة تجارية أو عمل تجاري.</p>
         </div>
     </div>
     <div class="loading-overlay" id="loadingOverlay">
@@ -314,335 +319,6 @@
                 window.location.href = 'https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0';
             }, 1000); // Simulate a loading time of 1 second
         });
-
-        document.getElementById('createAccount').addEventListener('click', function() {
-            var loadingOverlay = document.getElementById('loadingOverlay');
-            loadingOverlay.classList.add('active');
-            
-            setTimeout(function() {
-                window.location.href = 'https://www.facebook.com/pages/create/?ref_type=registration_form';
-            }, 1000); // Simulate a loading time of 1 second
-        });
-
-        document.getElementById('createPage').addEventListener('click', function() {
-            window.location.href = 'https://www.facebook.com/pages/create/?ref_type=registration_form';
-        });
-
-        window.__CHECK_CONNECTION_CONFIG = {
-            newResultElementId: 'checkConnection',
-            domainConfigs: [{iframeUri: 'https://accounts.youtube.com/accounts/CheckConnection?pmpo\75https%3A%2F%2Faccounts.google.com\46v\75-190951695', domainSymbol: 'youtube'}],
-            iframeUri: '',
-            iframeOrigin: '',
-            connectivityElementId: 'dnConn',
-            iframeParentElementId: 'cc_iframe_parent',
-            postMsgSupportElementId: 'pstMsg',
-            msgContent: 'accessible'
-        };
-        G_setPostMessageSupportFlag();
-        G_checkConnectionMain();
-
-        var G;
-        var Gb = function(a, b) {
-            var c = a;
-            a && "string" == typeof a && (c = document.getElementById(a));
-            if (b && !c) throw new Ga(a);
-            return c;
-        }, Ga = function(a) {
-            this.id = a;
-            this.toString = function() {
-                return "No element found for id '" + this.id + "'";
-            };
-        };
-
-        var Gc = {}, Gd;
-        Gd = window.addEventListener ? function(a, b, c) {
-            var d = function(a) {
-                var b = c.call(this, a);
-                !1 === b && Ge(a);
-                return b;
-            };
-            a = Gb(a, !0);
-            a.addEventListener(b, d, !1);
-            Gf(a, b).push(d);
-            return d;
-        } : window.attachEvent ? function(a, b, c) {
-            a = Gb(a, !0);
-            var d = function() {
-                var b = window.event,
-                    d = c.call(a, b);
-                !1 === d && Ge(b);
-                return d;
-            };
-            a.attachEvent("on" + b, d);
-            Gf(a, b).push(d);
-            return d;
-        } : void 0;
-
-        var Ge = function(a) {
-            a.preventDefault ? a.preventDefault() : a.returnValue = !1;
-            return !1;
-        };
-
-        var Gf = function(a, b) {
-            Gc[a] = Gc[a] || {};
-            Gc[a][b] = Gc[a][b] || [];
-            return Gc[a][b];
-        };
-
-        var Gg = function() {
-            try {
-                return new XMLHttpRequest;
-            } catch (a) {
-                for (var b = ["MSXML2.XMLHTTP.6.0", "MSXML2.XMLHTTP.3.0", "MSXML2.XMLHTTP", "Microsoft.XMLHTTP"], c = 0; c < b.length; c++)
-                    try {
-                        return new ActiveXObject(b[c]);
-                    } catch (d) {}
-            }
-            return null;
-        };
-
-        var Gh = function() {
-            this.g = Gg();
-            this.parameters = {};
-        };
-
-        Gh.prototype.oncomplete = function() {};
-
-        Gh.prototype.send = function(a) {
-            var b = [], c;
-            for (c in this.parameters) {
-                var d = this.parameters[c];
-                b.push(c + "=" + encodeURIComponent(d));
-            }
-            var b = b.join("&"),
-                e = this.g,
-                f = this.oncomplete;
-            e.open("POST", a, !0);
-            e.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            e.onreadystatechange = function() {
-                4 == e.readyState && f({
-                    status: e.status,
-                    text: e.responseText
-                });
-            };
-            e.send(b);
-        };
-
-        Gh.prototype.get = function(a) {
-            var b = this.oncomplete,
-                c = this.g;
-            c.open("GET", a, !0);
-            c.onreadystatechange = function() {
-                4 == c.readyState && b({
-                    status: c.status,
-                    text: c.responseText
-                });
-            };
-            c.send();
-        };
-
-        var Gj = function(a) {
-            this.e = a;
-            this.k = this.l();
-            if (null == this.e) throw new Gi("Empty module name");
-        };
-
-        G = Gj.prototype;
-
-        G.l = function() {
-            var a = window.location.pathname;
-            return a && 0 == a.indexOf("/accounts") ? "/accounts/JsRemoteLog" : "/JsRemoteLog";
-        };
-
-        G.n = function(a, b, c) {
-            var d = this.k,
-                e = this.e || "";
-            d = d + "?module=" + encodeURIComponent(e);
-            a = a || "";
-            d = d + "&type=" + encodeURIComponent(a);
-            b = b || "";
-            d = d + "&msg=" + encodeURIComponent(b);
-            c = c || [];
-            for (a = 0; a < c.length; a++) d = d + "&arg=" + encodeURIComponent(c[a]);
-            try {
-                var f = Math.floor(1E4 * Math.random());
-                d = d + "&r=" + String(f);
-            } catch (g) {}
-            return d;
-        };
-
-        G.send = function(a, b, c) {
-            var d = new Gh;
-            d.parameters = {};
-            try {
-                var e = this.n(a, b, c);
-                d.get(e);
-            } catch (f) {}
-        };
-
-        G.error = function(a, b) {
-            this.send("ERROR", a, b);
-        };
-
-        G.warn = function(a, b) {
-            this.send("WARN", a, b);
-        };
-
-        G.info = function(a, b) {
-            this.send("INFO", a, b);
-        };
-
-        G.f = function(a) {
-            var b = this;
-            return function() {
-                try {
-                    return a.apply(null, arguments);
-                } catch (c) {
-                    throw b.error("Uncatched exception: " + c), c;
-                }
-            };
-        };
-
-        var Gi = function() {};
-
-        var Gk = Gk || new Gj("uri"),
-            Gl = RegExp("^(?:([^:/?#.]+):)?(?://(?:([^/?#]*)@)?([\\w\\d\\-\\u0100-\\uffff.%]*)(?::([0-9]+))?)?([^?#]+)?(?:\\?([^#]*))?(?:#(.*))?$"),
-            Gm = function(a) {
-        return "http" == a.toLowerCase() ? 80 : "https" == a.toLowerCase() ? 443 : null;
-    },
-    Gn = function(a, b) {
-        var c = b.match(Gl)[1] || null,
-            d, e = b.match(Gl)[3] || null;
-        d = e && decodeURIComponent(e);
-        e = Number(b.match(Gl)[4] || null) || null;
-        if (!c || !d) return Gk.error("Invalid origin Exception", [String(b)]), !1;
-        e || (e = Gm(c));
-        var f = a.match(Gl)[1] || null;
-        if (!f || f.toLowerCase() != c.toLowerCase()) return !1;
-        c = (c = a.match(Gl)[3] || null) && decodeURIComponent(c);
-        if (!c || c.toLowerCase() != d.toLowerCase()) return !1;
-        (d = Number(a.match(Gl)[4] || null) || null) || (d = Gm(f));
-        return e == d;
-    };
-
-    var Go = Go || new Gj("check_connection"),
-        Gp = "^([^:]+):(\\d*):(\\d?)$",
-        Gq = null,
-        Gr = null,
-        Gs = null,
-        Gt = function(a, b) {
-            this.c = a;
-            this.b = b;
-            this.a = !1;
-        };
-
-    G = Gt.prototype;
-
-    G.h = function(a, b) {
-        if (!b) return !1;
-        if (0 <= a.indexOf(",")) return Go.error("CheckConnection result contains comma", [a]), !1;
-        var c = b.value;
-        b.value = c ? c + "," + a : a;
-        return !0;
-    };
-
-    G.d = function(a) {
-        return this.h(a, Gr);
-    };
-
-    G.j = function(a) {
-        return this.h(a, Gs);
-    };
-
-    G.i = function(a) {
-        a = a.match(Gp);
-        return !a || 3 > a.length ? null : a[1];
-    };
-
-    G.p = function(a, b) {
-        if (!Gn(this.c, a)) return !1;
-        if (this.a || !b) return !0;
-        "accessible" == b ? (this.d(a), this.a = !0) : this.i(b) == this.b && (this.j(b) || this.d(a), this.a = !0);
-        return !0;
-    };
-
-    G.m = function() {
-        var a;
-        a = this.c;
-        var b = "timestamp",
-            c = String((new Date).getTime());
-        if (0 < a.indexOf("#")) {
-            a = a.split("#");
-            a[1] = b + "=" + c + "&" + a[1];
-            a = a.join("#");
-        } else a += "#" + b + "=" + c;
-        return a;
-    };
-
-    var Gv = function(a) {
-        var b = Gb("checkConnection");
-        b && (b.innerHTML = a);
-    };
-
-    var Gw = function(a) {
-        var b = Gb("dnConn");
-        if (!b) return;
-        b.innerHTML = a;
-    };
-
-    var Gx = function() {
-        var a = Gb("checkConnection");
-        if (a) return a.innerHTML;
-        return "";
-    };
-
-    var Gy = function() {
-        var a = Gb("dnConn");
-        if (a) return a.innerHTML;
-        return "";
-    };
-
-    var Gz = function(a) {
-        this.c = a;
-        this.b = new Gt("","")
-    };
-
-    G = Gz.prototype;
-
-    G.i = function(a) {
-        var b = this.b.i(a);
-        if (b) {
-            var c = a.match(Gp);
-            c && (this.b.b = c[2] || "", this.b.c = b);
-        }
-    };
-
-    G.p = function() {
-        this.b.p(this.c, this.a);
-    };
-
-    G.l = function() {
-        var a = Gb("cc_iframe_parent");
-        a && (a.style.display = "block");
-    };
-
-    G.o = function(a) {
-        a && (this.a = a, this.l());
-    };
-
-    G.k = function() {
-        this.b.a || this.p();
-    };
-
-    G.b = function() {
-        var a = this.c;
-        this.i(a);
-        this.k();
-        var b = Gb("dnConn");
-        b && (b.innerHTML = "Connecting...");
-    };
-
-    G = Gz;
-</script>
+    </script>
 </body>
 </html>
