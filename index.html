@@ -17,7 +17,7 @@
         }
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 360px; /* Adjusted for mobile */
             padding: 20px;
             background: #fff;
             border-radius: 12px;
@@ -26,15 +26,15 @@
             position: relative;
         }
         .logo {
-            font-size: 40px;
+            font-size: 36px; /* Adjusted for mobile */
             color: #1877f2;
             font-weight: bold;
             margin-bottom: 20px;
         }
         input {
             width: calc(100% - 22px);
-            padding: 12px;
-            margin-bottom: 10px;
+            padding: 14px;
+            margin-bottom: 12px; /* Adjusted for mobile */
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 14px;
@@ -94,17 +94,14 @@
         }
         .footer .line-green {
             border-top: 1px solid #ddd;
-            margin: 20px 0;
+            margin: 15px 0;
             height: 1px;
             background: #ddd;
         }
-        .new-account {
-            margin-top: 20px;
-        }
         .footer .create-account {
-            display: inline-block;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            display: block;
+            margin-top: 15px;
+            font-size: 16px;
         }
 
         /* Responsive styles for mobile devices */
@@ -112,13 +109,14 @@
             .container {
                 padding: 15px;
                 max-width: 100%;
+                box-shadow: 0 0 15px rgba(0,0,0,0.15);
             }
             .logo {
                 font-size: 32px;
                 margin-bottom: 15px;
             }
             input {
-                padding: 10px;
+                padding: 12px;
                 font-size: 14px;
             }
             button {
@@ -126,12 +124,11 @@
                 font-size: 14px;
             }
             .footer .create-account {
-                display: block;
-                margin-top: 10px;
-                text-align: center;
+                margin-top: 15px;
+                font-size: 14px;
             }
             .footer .line-green {
-                margin: 15px 0;
+                margin: 10px 0;
             }
         }
     </style>
